@@ -11,9 +11,10 @@ network_overrides: &network_overrides
   constants:
     mainnet:
       NETWORK_TYPE: 0
+      AGG_SIG_ME_ADDITIONAL_DATA: ba8731cfde1fa96722b427d901c61d615bb91ff1b52be2f65bd5bedb10e13dba
       GENESIS_CHALLENGE: ccd5bb71183532bff220ba46c268991a3ff07eb358e8255a65c30a2dce0e5fbb
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af"
+      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "da61b399eb7ebe41792857c7b8b161286c781d775b2ba8042cc2f6a488335c1f"
+      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "83c4a1424c7e64bf6f15942ecc281fd01cd2b15e7f7118febe4dc6c4b8f06c87"
     testnet0:
       DIFFICULTY_CONSTANT_FACTOR: 10052721566054
       GENESIS_CHALLENGE: 117816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
@@ -97,7 +98,7 @@ harvester:
 
 pool:
   # Replace this with a real puzzle hash
-  # xch_target_address: txch102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
+  # pltr_target_address: tpltr102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
   logging: *logging
   network_overrides: *network_overrides
   selected_network: *selected_network
@@ -117,7 +118,7 @@ farmer:
   pool_public_keys: []
 
   # Replace this with a real puzzle hash
-  # xch_target_address: txch102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
+  # pltr_target_address: tpltr102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
 
   # If True, starts an RPC server at the following port
   start_rpc_server: True
