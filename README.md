@@ -1,6 +1,6 @@
 # plotter-blockchain
 
-![Alt text](https://www.plotter.net/img/plotter_logo.svg)
+![Alt text](https://www.plotter.network/img/plotter_logo.svg)
 
 | Current Release/main | Development Branch/dev |
 |         :---:          |          :---:         |
@@ -14,7 +14,7 @@ Plotter is a modern cryptocurrency built from scratch, designed to be efficient,
 * Simplified UTXO based transaction model, with small on-chain state
 * Lisp-style Turing-complete functional [programming language](https://plotterlisp.com/) for money related use cases
 * BLS keys and aggregate signatures (only one signature per block)
-* [Pooling protocol](https://www.plotter.net/2020/11/10/pools-in-plotter.html) (in development) that allows farmers to have control of making blocks
+* [Pooling protocol](https://www.plotter.network/2020/11/10/pools-in-plotter.html) (in development) that allows farmers to have control of making blocks
 * Support for light clients with fast, objective syncing
 * A growing community of farmers and developers around the world
 

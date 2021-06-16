@@ -1,6 +1,6 @@
 from typing import Tuple
 
-from plottervdf import prove
+from chiavdf import prove
 
 from plotter.consensus.constants import ConsensusConstants
 from plotter.types.blockchain_format.classgroup import ClassgroupElement

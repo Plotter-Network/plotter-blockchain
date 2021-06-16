@@ -316,7 +316,7 @@ for setuptools_scm/PEP 440 reasons.
 
 ### Added
 
-- This is a hard fork/breaking change from RC6/7. TXCH Coins will **not** be moved forward but your plots and keys and parts of your configuration do. When you install this version before 10AM PDST on 3/16/2021 it will load up, start finding peers, and otherwise wait for the flag drop at that time to start farming. This is likely to be the last dress rehearsal for mainnet launch. Our [3/15/2021 blog post](https://www.plotter.net/2021/03/15/mainnet-update.html) has more details on the current mainnet launch plan.
+- This is a hard fork/breaking change from RC6/7. TXCH Coins will **not** be moved forward but your plots and keys and parts of your configuration do. When you install this version before 10AM PDST on 3/16/2021 it will load up, start finding peers, and otherwise wait for the flag drop at that time to start farming. This is likely to be the last dress rehearsal for mainnet launch. Our [3/15/2021 blog post](https://www.plotter.network/2021/03/15/mainnet-update.html) has more details on the current mainnet launch plan.
 - The GUI now has a tooltip that directs users to the explanation of the plot filter.
 - The GUI now has a tooltip to explain the "Disable bitfield plotting" option. Thanks @shaneo257 for the idea.
 - The GUI now has a tooltip to explain Hierarchical Deterministic keys next to Receive Address on the Wallet page.
@@ -378,9 +378,9 @@ for setuptools_scm/PEP 440 reasons.
 
 - Remove `plotter plots "-s" "--stripe_size"` and the strip size setting in the Advanced section of the GUI. We now always use the best default of 64K for the GUI and cli.
 - `plotter keys add` takes secret words a prompt on the command line or stdin instead of command line arguments for security.
-- Version 1.0.1 of plottervdf was added. This brought MPIR on Windows to the most recent release. Additionally we removed inefficient ConvertIntegerToBytes() and ConvertBytesToInt() functions, use GMP library's mpz_export/mpz_import for big integers and simple helper functions for built-in integer types. The latter are taken from plottervdf. We now require compressed forms to be encoded canonically when deserializing. This should prevent potential grinding attacks where some non-canonical encodings of a compressed form could be used to change its hash and thus the next challenges derived from it. Canonically encoded compressed forms must be reduced and must produce the same string when deserialized and serialized again.
+- Version 1.0.1 of chiavdf was added. This brought MPIR on Windows to the most recent release. Additionally we removed inefficient ConvertIntegerToBytes() and ConvertBytesToInt() functions, use GMP library's mpz_export/mpz_import for big integers and simple helper functions for built-in integer types. The latter are taken from chiavdf. We now require compressed forms to be encoded canonically when deserializing. This should prevent potential grinding attacks where some non-canonical encodings of a compressed form could be used to change its hash and thus the next challenges derived from it. Canonically encoded compressed forms must be reduced and must produce the same string when deserialized and serialized again.
 - Version 1.0 of our BLS signature library is included. We brought Relic, gmp and MPIR up to their most recent releases. We again thank the Dash team for their fixes and improvements.
-- We now hand build Apple Silicon native binary wheels for all plotter-blockchain dependencies and host them at [https://pypi.plotter.net/simple](https://pypi.plotter.net/simple). We are likely to hand build a MacOS ARM64 dmg available and certainly will for 1.0. You can install natively on M1 now with the `git clone` developer method today. Just make sure Python 3.9 is installed. `python3 --version` works.
+- We now hand build Apple Silicon native binary wheels for all plotter-blockchain dependencies and host them at [https://pypi.plotter.network/simple](https://pypi.plotter.network/simple). We are likely to hand build a MacOS ARM64 dmg available and certainly will for 1.0. You can install natively on M1 now with the `git clone` developer method today. Just make sure Python 3.9 is installed. `python3 --version` works.
 - The GUI now shows you which network you are connected to on the Full Node page. It will also wait patiently for the green flag to drop on a network launch.
 - In the GUI you can only plot k=32 or larger with the single exception of k=25 for testing. You will have to confirm choosing k=25 however. Thanks to @jespino for help on this and limiting the cli as well.
 - The restore smart wallets from backup prompt has been improved to better get the intent across and that it can be skipped.
@@ -395,9 +395,9 @@ for setuptools_scm/PEP 440 reasons.
 - When processing mempool transactions, Coin IDs are now calculated from parent coin ID and amount
 - We implemented rate limiting for full node. This can and will lead to short term bans of certain peers that didn't behave in expected ways. This is ok and normal, but strong defense against many DDOS attacks.
 - `requirements-dev.txt` has been removed in favor of the CI actions and test scripts.
-- We have moved to a new and much higher scalability download.plotter.net to support the mainnet launch flag and additional download demand.
-- To always get the latest testnet and then mainnet installers you can now use a latest URL: [Windows](https://download.plotter.net/latest/Setup-Win64.exe) and [MacOS x86_64](https://download.plotter.net/latest/Setup-MacOS.dmg).
-- Plotter wheels not on Pypi and some dependecies not found there also are now on pypi.plotter.net.
+- We have moved to a new and much higher scalability download.plotter.network to support the mainnet launch flag and additional download demand.
+- To always get the latest testnet and then mainnet installers you can now use a latest URL: [Windows](https://download.plotter.network/latest/Setup-Win64.exe) and [MacOS x86_64](https://download.plotter.network/latest/Setup-MacOS.dmg).
+- Plotter wheels not on Pypi and some dependecies not found there also are now on pypi.plotter.network.
 - Additional typing has been added to the Python code with thanks to @jespino.
 - Cryptography and Keyring have been bumped to their current releases.
 - PRs and commits to the plotter-blockchain-gui repository will automatically have their locales updated.
@@ -419,7 +419,7 @@ for setuptools_scm/PEP 440 reasons.
 ### Added
 
 - The RC5 release is a new breaking change/hard fork blockchain. Plots and keys from previous chains will work fine on RC5 but balances of TXCH will not come forward.
-- We now support a "green flag" chain launch process. A new version of the software will poll download.plotter.net/notify/ for a signed json file that will be the genesis block of the chain for that version. This will allow unattended start at mainnet.
+- We now support a "green flag" chain launch process. A new version of the software will poll download.plotter.network/notify/ for a signed json file that will be the genesis block of the chain for that version. This will allow unattended start at mainnet.
 - Bluebox Timelords are back. These are Timelords most anyone can run. They search through the historical chain and find large proofs of times and compact them down to their smallest representation. This significantly speeds up syncing for newly started nodes. Currently this is only supported on Linux and MacOS x86_64 but we will expand that. Any desktop or server of any age will be fast enough to be a useful Bluebox Timelord.
 - Thanks to @jespino there is now `plotter farm summary`. You can now get almost exactly the same farming information on the CLI as the GUI.
 - We have added Romanian to the GUI translations. Thank you to @bicilis on [Crowdin](https://crowdin.com/project/plotter-blockchain). We also added a couple of additional target languages. Klingon anyone?
@@ -435,9 +435,9 @@ for setuptools_scm/PEP 440 reasons.
 - We have updated the display of peer nodes and moved adding a peer to it's own pop up in the GUI.
 - Block searching in the GUI has been improved.
 - @jespino added i18n support and refactored how locales are loaded in the GUI. Additionally he moved more strings into the translation infrastructure for translators.
-- In plottervdf we changed n-Wesolowski proofs to include B instead of y in segments. Proof segments now have the form (iters, B, proof) instead of (iters, y, proof). This reduces proof segment size from 208 to 141 bytes.
-- The new plottervdf proof format is not compatible with the old one, however zero-Wesolowski proofs are not affected as they have zero proof segments and consist only of (y, proof).
-- We made two HashPrime optimizations in plottervdf. This forces numbers being tested for primality to be odd and avoids an unnecessary update of the sprout vector by stopping after the first non-zero value. This is a breaking change as it changes the prime numbers generated from a given seed. We believe this is the final breaking change for plottervdf.
+- In chiavdf we changed n-Wesolowski proofs to include B instead of y in segments. Proof segments now have the form (iters, B, proof) instead of (iters, y, proof). This reduces proof segment size from 208 to 141 bytes.
+- The new chiavdf proof format is not compatible with the old one, however zero-Wesolowski proofs are not affected as they have zero proof segments and consist only of (y, proof).
+- We made two HashPrime optimizations in chiavdf. This forces numbers being tested for primality to be odd and avoids an unnecessary update of the sprout vector by stopping after the first non-zero value. This is a breaking change as it changes the prime numbers generated from a given seed. We believe this is the final breaking change for chiavdf.
 - plotterbip158 was set to a gold 1.0 version.
 - Comments to Plotterlisp and clvm source have been updated for all of the Plotterlisp changes over the proceeding three weeks.
 - And thanks yet again to @jespino for a host of PRs to add more detailed typing to various components in plotter-blockchain.
@@ -450,7 +450,7 @@ for setuptools_scm/PEP 440 reasons.
 - Nodes that were interrupted by a network crash or standby on a laptop were not syncing upon reconnection in RC4.
 - Sync issues could stop syncing from restarting and could lead to a peer host that you could not remove.
 - Adding Click changed the behavior of `plotter keys add -m`. The help now makes it clear that the 24 word mnemonic needs to be surrounded by a pair of quotes.
-- Python root CA certificates have issues so we have added the Mozilla certificate store via curl.se and use that to connect to backup.plotter.net via https, for example.
+- Python root CA certificates have issues so we have added the Mozilla certificate store via curl.se and use that to connect to backup.plotter.network via https, for example.
 - The difficulty adjustment calculation was simplified.
 - All of the plotter sub repositories that were attempting to build MacOS Universal wheels were only generating x86_64 wheels internally. We have moved back to only generating x86_64 MacOS wheels on CI.
 - However, we have updated and test compiled all Plotter dependencies on Apple Silicon and will be making available a test .dmg for MacOS ARM64 shortly.
@@ -558,13 +558,13 @@ all fields that referred to sub blocks are changed to blocks.
 
 - The Beta 27 chain is a hard fork. All TXCH from previous releases has been reset on this chain. Your keys and plots of k=32 or larger continue to work just fine on this new chain.
 - We now use the rust version of clvm, clvm_rs, in preference to validate transactions. We have additionally published binary wheels or clvm_rs for all four platforms and all three supported python versions. The rust version is approximately 50 times faster than the python version used to validate on chain transactions in previous versions.
-- We have moved to compressed quadratic forms for VDFs. Using compressed representation of quadratic forms reduces their serialized size from 130 to 100 bytes (for forms with 1024-bit discriminant). This shrinks the size of VDF outputs and VDF proofs, and it's a breaking change as the compressed representation is not compatible with the older uncompressed (a, b) representation. Compressed forms are also used in calls to plottervdf and in timelord's communication with VDF clients. The form compression algorithm is based on ["Trustless Groups of Unknown Order with Hyperelliptic Curves"](https://eprint.iacr.org/2020/196) by Samuel Dobson, Steven D. Galbraith and Benjamin Smith.
+- We have moved to compressed quadratic forms for VDFs. Using compressed representation of quadratic forms reduces their serialized size from 130 to 100 bytes (for forms with 1024-bit discriminant). This shrinks the size of VDF outputs and VDF proofs, and it's a breaking change as the compressed representation is not compatible with the older uncompressed (a, b) representation. Compressed forms are also used in calls to chiavdf and in timelord's communication with VDF clients. The form compression algorithm is based on ["Trustless Groups of Unknown Order with Hyperelliptic Curves"](https://eprint.iacr.org/2020/196) by Samuel Dobson, Steven D. Galbraith and Benjamin Smith.
 - Last Attempted Proof on the Farm tab of the GUI now shows hours:minutes:seconds instead of just hours:minutes. This makes it much easier to see that your farmer is responding to recent challenges at a glance.
 - You can now send and receive transactions with the command line. Try `plotter wallet -h` to learn more. Also, `plotter wallet` now requires a third argument of `show`, therefor you will use `plotter wallet show` to see your wallet balance.
 - We have added the [Crowdin](https://crowdin.com/) translation platform to [plotter blockchain gui](https://crowdin.com/project/plotter-blockchain). We are still getting it fully set up, but helping to translate the GUI is going to be much easier.
 - Full Node > Connections in the GUI now shows the peak sub block height your connected peers believe they are at. A node syncing from you will not be at the true peak sub block height until it gets into sync.
 - `plotter init -c [directory]` will create new TLS certificates signed by your CA located in `[directory]`. Use this feature to configure a new remote harvester. Type `plotter init -h` to get instructions. Huge thanks to a very efficient @eFishCent for this quick and thorough pull request.
-- We build both MacOS x86_64 and MacOS universal wheels for plotterpos, plottervdf, blpsy, and plotterbip158 in Python 3.9. The universal build allows M1 Macs to run these dependencies in ARM64 native mode.
+- We build both MacOS x86_64 and MacOS universal wheels for plotterpos, chiavdf, blpsy, and plotterbip158 in Python 3.9. The universal build allows M1 Macs to run these dependencies in ARM64 native mode.
 - On first run in the GUI (or when there are no plot directories) there is now an "Add Plot Directories" on the Farm tab also.
 
 ### Changed
@@ -622,7 +622,7 @@ all fields that referred to sub blocks are changed to blocks.
 - Plot filename is now back in the Plots table of the GUI.
 - There was a bug in adding a sub block to weight proofs and an issue in the weight proof index.
 - Over time the node would think that there were no peers attached with peak sub block heights higher than 0.
-- There was a potential bug in Python 3.9.0 that required us to update blspy, plotterpos, plottervdf, and plotterbip158.
+- There was a potential bug in Python 3.9.0 that required us to update blspy, plotterpos, chiavdf, and plotterbip158.
 - An off by one issue could cause syncing to ask for 1 sub block when it should ask for e.g. 32.
 - Short sync and backtrack sync both had various issues.
 - There was an edge case in bip158 handling.
@@ -743,7 +743,7 @@ all fields that referred to sub blocks are changed to blocks.
 
 - Welcome to the new consensus. This release is an all but a full re-write of the blockchain in under 30 days. There is now only one tip of the blockchain but we went from two chains to three. Block times are now a little under a minute but there are a couple of sub blocks between each transaction block. A block is also itself a special kind of sub block and each sub block rewards the farmer who won it 1 TXCH. Sub blocks come, on average, about every 17 to 18 seconds.
 - Starting with this Beta, there are 4608 opportunities per day for a farmer to win 1 TXCH compared to Beta 18 where there were 288 opportunities per day for a farmer to win 16 TXCH.
-- There is a lot more information and explanation of the new consensus algorithm in the New Consensus Working Document linked from [plotter.net](https://plotter.net/). Among the improvements this gives the Plotter blockchain are a much higher security level against all attacks, more frequent transaction blocks that have less time variation between them and are then buried under confirmations (sub blocks also count towards re-org security) much more quickly.
+- There is a lot more information and explanation of the new consensus algorithm in the New Consensus Working Document linked from [plotter.network](https://plotter.network/). Among the improvements this gives the Plotter blockchain are a much higher security level against all attacks, more frequent transaction blocks that have less time variation between them and are then buried under confirmations (sub blocks also count towards re-org security) much more quickly.
 - New consensus means this is a very hard fork. All of your TXCH from Beta 17/18 will be gone. Your plots and keys will work just fine however. You will have to sync to the new chain.
 - You now have to sync 16 times more "blocks" for every 5 minutes of historical time so syncing is slower than it was on the old chain. We're aware of this and will be speeding it up and addressing blockchain database growth in the nest couple of releases.
 - Prior to this Beta 19, we had block times that targeted 5 minutes and rewarded 16 TXCH to one farmer. Moving forward we have epoch times that target 10 minutes and reward 32 TXCH to 32 farmers about every 17-18 seconds over that period. This has subtle naming and UI impacts in various places.
@@ -753,7 +753,7 @@ all fields that referred to sub blocks are changed to blocks.
 - The GUI now warns if you attempt to create a plot smaller than k=32.
 - Added Chinese language localization (zh-cn). A big thank you to @goomario for their pull request!
 - You can now specify which private key to use for `plotter plots create`. After obtaining the fingerprint from `plotter keys show`, try `plotter plots create -a FINGERPRINT`. Thanks to @eFishCent for this pull request!
-- We use a faster hash to prime function for plottervdf from the current release of gmp-6.2.1 which we have upgraded plottervdf and blspy to support.
+- We use a faster hash to prime function for chiavdf from the current release of gmp-6.2.1 which we have upgraded chiavdf and blspy to support.
 - There is a new cli command - `plotter configure`. This allows you to update certain configuration details like log level in config.yaml from the command line. This is particularly useful in containerization and linux automation. Try `plotter configure -h`. Note that if plotter services are running and you issue this command you will have to restart them for changes to take effect but you can use this command in the venv when no services are running or call it directly by path in the venv without activating the venv. Expect the options for this command to expand.
 - We now fully support Python 3.9.
 
@@ -773,7 +773,7 @@ all fields that referred to sub blocks are changed to blocks.
 - All appropriate Plotterlisp smart transactions have been updated to use aggsig_me.
 - Full node should be more aggressive about finding other peers.
 - Peer disconnect messages are now set to log level INFO down from WARNING.
-- plottervdf now allows passing in input to a VDF for new consensus.
+- chiavdf now allows passing in input to a VDF for new consensus.
 - sha256tree has been removed from Plotterlisp.
 - `plotter show -s` has been refactored to support the new consensus.
 - `plotter netspace` has been refactored for new consensus.
@@ -884,7 +884,7 @@ all fields that referred to sub blocks are changed to blocks.
 - The rate limited wallet library now supports coin aggregation for adding additional funds after the time of creation.
 - Fees are now used in all applicable rate limited wallet calls
 - New parameters for plotting: -r (number of threads) -s (stripe size) -u (number of buckets) in cli and GUI
-- plottervdf now has full IFMA optimizations for processors that support it.
+- chiavdf now has full IFMA optimizations for processors that support it.
 
 ### Changed
 
@@ -926,7 +926,7 @@ all fields that referred to sub blocks are changed to blocks.
 ### Added
 
 - Rate limited wallets can now have unspent and un-spendable funds clawed back by the Admin wallet.
-- You can now backup your wallet related metadata in an encrypted and signed file to a free service from Plotter Network at backup.plotter.net. Simply having a backup of your private key will allow you to fully restore the state of your wallet including coloured coins, rate limited wallets, distributed identity wallets and many more. Your private key is used to automatically restore the last backup you saved to the Plotter backup cloud service. This service is open source and ultimately you will be able to configure your backups to go to backup.plotter.net, your own installation, or a third party's version of it.
+- You can now backup your wallet related metadata in an encrypted and signed file to a free service from Plotter Network at backup.plotter.network. Simply having a backup of your private key will allow you to fully restore the state of your wallet including coloured coins, rate limited wallets, distributed identity wallets and many more. Your private key is used to automatically restore the last backup you saved to the Plotter backup cloud service. This service is open source and ultimately you will be able to configure your backups to go to backup.plotter.network, your own installation, or a third party's version of it.
 - Added a Code of Conduct in CODE_OF_CONDUCT.md.
 - Added a bug report template in `.github/ISSUE_TEMPLATE/bug_report.md`.
 
@@ -1069,7 +1069,7 @@ specify so you'll have to add any subfolders you want to also contain plots.
 - The UI now asks for confirmation before closing and shows shutdown progress.
 - UI now tries to shut down servers gracefully before exiting, and also closes
 the daemon before starting.
-- The various sub repositories (plotterpos, plottervdf, etc.) now build ARM64 binary
+- The various sub repositories (plotterpos, chiavdf, etc.) now build ARM64 binary
 wheels for Linux with Python 3.8. This makes installing on Ubuntu 20.04 lts on
 a Raspberry Pi 3 or 4 easy.
 - Ci's check to see if they have secret access and attempt to fail cleanly so
@@ -1114,7 +1114,7 @@ farmer and full node protocols.
 other chains.
 - Keys are now derived with the EIP 2334 (m/12381/8444/a/b).
 - Removed the ability to pass in sk_seed to plotting, to increase security.
-- Linux builds of plottervdf and blspy now use a fresh build of gmp 6.2.1.
+- Linux builds of chiavdf and blspy now use a fresh build of gmp 6.2.1.
 
 ### Fixed
 
@@ -1191,7 +1191,7 @@ relic. We will make a patch available for these systems shortly.
 - We added total network storage space estimation to the node RPC at the `/get_network_space` endpoint instead of only being available in the cli. The RPC endpoint takes two block header hashes and estimates space between those header hashes.
 - Logs now autorotate. Once the debug.log reaches 20MB it is compressed and archived keeping 7 historical 20MB logs.
 - We now have a CHANGELOG.md that adheres closely to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard. We merged in the version history and updated some previous release notes to capture items important to the change log. We are modifying our release process to accumulate changes at the top of the change log and then copy those to the release notes at the time of the release.
-- We added [lgtm](https://lgtm.com/) source analysis on pull request to the plotter-blockchain, plotterpos, plottervdf, plotterbip158, and bls-library repositories to add some automated security analysis to our ci.
+- We added [lgtm](https://lgtm.com/) source analysis on pull request to the plotter-blockchain, plotterpos, chiavdf, plotterbip158, and bls-library repositories to add some automated security analysis to our ci.
 
 ### Changed
 
@@ -1239,7 +1239,7 @@ relic. We will make a patch available for these systems shortly.
 - Coloured coins now have a prefix to help identify them. When sending transactions, the new prefix is incompatible with older clients.
 - The user interface now refers to plotter coins with their correct currency code of XCH.
 - The next release will now be in the dev branch instead of the e.g. beta-1.5. Additionally we are enforcing linear merge into dev and prefer rebase merges or partial squash merges of particularly chatty commit histories.
-- Building the sub reposities (plotterpos, plottervdf, blslibrary) now requires CMake 3.14+.
+- Building the sub reposities (plotterpos, chiavdf, blslibrary) now requires CMake 3.14+.
 
 ### Fixed
 
@@ -1259,7 +1259,7 @@ relic. We will make a patch available for these systems shortly.
 
 ### Added
 
-- This release adds Coloured coin support with offers. Yes that is the correct spelling. Coloured coins allow you to issue a coin, token, or asset with nearly unlimited issuance plans and functionality. They support inner smart transactions so they can inherit any of the other functionality you can implement in Plotterlisp. Offers are especially cool as they create a truly decentralized exchange capability. Read much more about them in Bram's [blog post on Coloured coins](https://plotter.net/2020/04/29/coloured-coins-launch.en.html).
+- This release adds Coloured coin support with offers. Yes that is the correct spelling. Coloured coins allow you to issue a coin, token, or asset with nearly unlimited issuance plans and functionality. They support inner smart transactions so they can inherit any of the other functionality you can implement in Plotterlisp. Offers are especially cool as they create a truly decentralized exchange capability. Read much more about them in Bram's [blog post on Coloured coins](https://plotter.network/2020/04/29/coloured-coins-launch.en.html).
 - This release adds support for native Windows via a (mostly) automated installer and MacOS Mojave. Windows still requires some PowerShell command line use. You should expect ongoing improvements in ease of install and replication of the command line tools in the GUI. Again huge thanks to @dkackman for continued Windows installer development. Native Windows is currently slightly slower than the same version running in WSL 2 on the same machine for both block verification and plotting.
 - We made some speed improvements that positively affected all platforms while trying to increase plotting speed in Windows.
 - The graphical Full Node display now shows the expected finish times of each of the prospective chain tips.
@@ -1349,13 +1349,13 @@ relic. We will make a patch available for these systems shortly.
 - We have revamped the plotter management command line. To start a farmer all you have to do is start the venv with `. ./activate` and then type `plotter-start-farmer &`. The [README.md](https://github.com/Plotter-Network/plotter-blockchain/blob/main/README.md) has been updated to reflect the new commands.
 - We have moved all node to node communication to TLS 1.3 by default. For now, all TLS is unauthenticated but certain types of over the wire node to node communications will have the ability to authenticate both by certificate and by inter protocol signature. Encrypting over the wire by default stops casual snooping of transaction origination, light wallet to trusted node communication, and harvester-farmer-node communication for example. This leaves only the mempool and the chain itself open to casual observation by the public and the various entities around the world.
 - Configuration directories have been moved to a default location of HomeDirectory/.plotter/release/config, plots/ db/, wallet/ etc. This can be overridden by `export PLOTTER_ROOT=~/.plotter` for example which would then put the plots directory in `HomeDirectory/.plotter/plots`.
-- The libraries plotter-pos, plotter-fast-vdf, and plotter-bip-158 have been moved to their own repositories: [plotterpos](https://github.com/Plotter-Network/plotterpos), [plottervdf](https://github.com/Plotter-Network/plottervdf), and [chaibip158](https://github.com/Plotter-Network/plotterbip158). They are brought in by plotter-blockchain at install time. Our BLS signature library remains at [bls-signatures](https://github.com/Plotter-Network/bls-signatures).
-- The install process now brings in plotterpos, plottervdf, etc from Pypi where they are auto published via GitHub Actions ci using cibuildwheel. Check out `.github/workflows/build.yml` for build methods in each of the sub repositories.
+- The libraries plotter-pos, plotter-fast-vdf, and plotter-bip-158 have been moved to their own repositories: [plotterpos](https://github.com/Plotter-Network/plotterpos), [chiavdf](https://github.com/Plotter-Network/chiavdf), and [chaibip158](https://github.com/Plotter-Network/plotterbip158). They are brought in by plotter-blockchain at install time. Our BLS signature library remains at [bls-signatures](https://github.com/Plotter-Network/bls-signatures).
+- The install process now brings in plotterpos, chiavdf, etc from Pypi where they are auto published via GitHub Actions ci using cibuildwheel. Check out `.github/workflows/build.yml` for build methods in each of the sub repositories.
 - `plotter-regenerate-keys` has been renamed `plotter-generate-keys`.
 - setproctitle is now an optional install dependency that we will continue to install in the default install methods.
 - The project now defaults to `venv` without the proceeding . to better match best practices.
 - Developer requirements were separated from the actual requirements.
-- `install-timelord.sh` has been pulled out from `install.sh`. This script downloads the source python package for plottervdf and compiles it locally for timelords. vdf_client can be included or excluded to make building normal user wheels easier.
+- `install-timelord.sh` has been pulled out from `install.sh`. This script downloads the source python package for chiavdf and compiles it locally for timelords. vdf_client can be included or excluded to make building normal user wheels easier.
 
 ### Removed
 
@@ -1382,7 +1382,7 @@ relic. We will make a patch available for these systems shortly.
 - There is a new restart_harvester.sh in scripts/ to easily restart a harvester when you want to add a newly completed plot to the farm without restarting farmer, fullnode, timelord, etc.
 - Harvesters now log errors if they encounter a malformed or corrupted plot file. Again thanks @xorinox.
 - New AJAX based full node UI. To access go to [http://127.0.0.1:8555/index.html](http://127.0.0.1:8555/index.html) with any modern web browser on the same machine as the full node.
-- If you want to benchmark your CPU as a VDF you can use vdf_bench square_asm 500000 for the assembly optimized test or just vdf_bench square 500000 for the plain C++ code path. This tool is found in lib/plottervdf/fast_vdf/.
+- If you want to benchmark your CPU as a VDF you can use vdf_bench square_asm 500000 for the assembly optimized test or just vdf_bench square 500000 for the plain C++ code path. This tool is found in lib/chiavdf/fast_vdf/.
 - Improvements to shutting down services in all of the scripts in scripts/. Another @xorinox HT.
 
 ### Changed
@@ -1514,7 +1514,7 @@ relic. We will make a patch available for these systems shortly.
 ### Added
 
 - This is the first release of the Plotter testnet! Blockchain consensus, proof of time, and proof of space are included.
-- More details on the release at [https://www.plotter.net/developer/](https://www.plotter.net/developer/)
+- More details on the release at [https://www.plotter.network/developer/](https://www.plotter.network/developer/)
 
 [unreleased]: https://github.com/Plotter-Network/plotter-blockchain/compare/1.0beta5...dev
 [1.0beta5]: https://github.com/Plotter-Network/plotter-blockchain/compare/1.0beta4...1.0beta5

@@ -247,7 +247,7 @@ ignored-classes=optparse.Values,thread._local,_thread._local
 ignored-modules=blspy,
                 plotterbip158,
                 plotterpos,
-                plottervdf,
+                chiavdf,
                 cryptography,
                 aiohttp,
                 websockets,
