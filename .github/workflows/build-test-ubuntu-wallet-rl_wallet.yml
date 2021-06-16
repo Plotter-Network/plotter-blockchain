@@ -63,17 +63,17 @@ jobs:
     - name: Checkout test blocks and plots
       uses: actions/checkout@v2
       with:
-        repository: 'Chia-Network/test-cache'
-        path: '.chia'
+        repository: 'Plotter-Network/test-cache'
+        path: '.plotter'
         ref: '0.26.0'
         fetch-depth: 1
 
     - name: Link home directory
       run: |
         cd $HOME
-        ln -s $GITHUB_WORKSPACE/.chia
-        echo "$HOME/.chia"
-        ls -al $HOME/.chia
+        ln -s $GITHUB_WORKSPACE/.plotter
+        echo "$HOME/.plotter"
+        ls -al $HOME/.plotter
 
     - name: Install ubuntu dependencies
       run: |

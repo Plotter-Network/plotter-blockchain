@@ -9,15 +9,15 @@ from typing import Dict
 import pytest
 import cProfile
 
-from chia.consensus.block_record import BlockRecord
-from chia.full_node.full_node_api import FullNodeAPI
-from chia.protocols import full_node_protocol as fnp
-from chia.types.condition_opcodes import ConditionOpcode
-from chia.types.condition_with_args import ConditionWithArgs
-from chia.types.unfinished_block import UnfinishedBlock
-from chia.util.clvm import int_to_bytes
-from chia.util.ints import uint64
-from chia.util.wallet_tools import WalletTool
+from plotter.consensus.block_record import BlockRecord
+from plotter.full_node.full_node_api import FullNodeAPI
+from plotter.protocols import full_node_protocol as fnp
+from plotter.types.condition_opcodes import ConditionOpcode
+from plotter.types.condition_with_args import ConditionWithArgs
+from plotter.types.unfinished_block import UnfinishedBlock
+from plotter.util.clvm import int_to_bytes
+from plotter.util.ints import uint64
+from plotter.util.wallet_tools import WalletTool
 from tests.core.fixtures import empty_blockchain  # noqa: F401
 
 from tests.connection_utils import add_dummy_connection, connect_and_get_peer

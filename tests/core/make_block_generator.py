@@ -2,15 +2,15 @@ from typing import Dict
 
 import blspy
 
-from chia.full_node.bundle_tools import simple_solution_generator
-from chia.types.blockchain_format.coin import Coin
-from chia.types.blockchain_format.program import Program
-from chia.types.coin_solution import CoinSolution
-from chia.types.condition_opcodes import ConditionOpcode
-from chia.types.generator_types import BlockGenerator
-from chia.types.spend_bundle import SpendBundle
-from chia.util.ints import uint64
-from chia.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import puzzle_for_pk, solution_for_conditions
+from plotter.full_node.bundle_tools import simple_solution_generator
+from plotter.types.blockchain_format.coin import Coin
+from plotter.types.blockchain_format.program import Program
+from plotter.types.coin_solution import CoinSolution
+from plotter.types.condition_opcodes import ConditionOpcode
+from plotter.types.generator_types import BlockGenerator
+from plotter.types.spend_bundle import SpendBundle
+from plotter.util.ints import uint64
+from plotter.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import puzzle_for_pk, solution_for_conditions
 
 GROUP_ORDER = 0x73EDA753299D7D483339D80809A1D80553BDA402FFFE5BFEFFFFFFFF00000001
 
