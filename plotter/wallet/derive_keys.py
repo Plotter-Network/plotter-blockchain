@@ -18,20 +18,20 @@ def _derive_path(sk: PrivateKey, path: List[int]) -> PrivateKey:
 
 
 def master_sk_to_farmer_sk(master: PrivateKey) -> PrivateKey:
-    return _derive_path(master, [12381, 4242, 0, 0])
+    return _derive_path(master, [12381, 8444, 0, 0])
 
 
 def master_sk_to_pool_sk(master: PrivateKey) -> PrivateKey:
-    return _derive_path(master, [12381, 4242, 1, 0])
+    return _derive_path(master, [12381, 8444, 1, 0])
 
 
 def master_sk_to_wallet_sk(master: PrivateKey, index: uint32) -> PrivateKey:
-    return _derive_path(master, [12381, 4242, 2, index])
+    return _derive_path(master, [12381, 8444, 2, index])
 
 
 def master_sk_to_local_sk(master: PrivateKey) -> PrivateKey:
-    return _derive_path(master, [12381, 4242, 3, 0])
+    return _derive_path(master, [12381, 8444, 3, 0])
 
 
 def master_sk_to_backup_sk(master: PrivateKey) -> PrivateKey:
-    return _derive_path(master, [12381, 4242, 4, 0])
+    return _derive_path(master, [12381, 8444, 4, 0])
