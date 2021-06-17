@@ -3,8 +3,8 @@ from setuptools import setup
 dependencies = [
     "blspy==1.0.2",  # Signature library
     "chiavdf==1.0.2",  # timelord and vdf verification
-    "plotterbip158==1.0",  # bip158-style wallet filters
-    "plotterpos==1.0.3",  # proof of space
+    "chiabip158==1.0",  # bip158-style wallet filters
+    "chiapos==1.0.3",  # proof of space
     "clvm==0.9.6",
     "clvm_rs==0.1.7",
     "clvm_tools==0.4.3",
@@ -42,8 +42,8 @@ dev_dependencies = [
 
 kwargs = dict(
     name="plotter-blockchain",
-    author="Mariano Sorgente",
-    author_email="mariano@plotter.network",
+    author="",
+    author_email="admin@plotter.network",
     description="Plotter blockchain full node, farmer, timelord, and wallet.",
     url="https://plotter.network/",
     license="Apache License",
