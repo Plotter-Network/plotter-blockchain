@@ -18,7 +18,7 @@ from plotter.wallet.puzzles.load_clvm import load_clvm
 MAX_COST = int(1e15)
 
 
-DESERIALIZE_MOD = load_clvm("plotterlisp_deserialisation.clvm", package_or_requirement="plotter.wallet.puzzles")
+DESERIALIZE_MOD = load_clvm("chialisp_deserialisation.clvm", package_or_requirement="plotter.wallet.puzzles")
 
 
 GENERATOR_CODE = """

@@ -9,7 +9,7 @@ wallet_program_files = set(
     [
         "plotter/wallet/puzzles/calculate_synthetic_public_key.clvm",
         "plotter/wallet/puzzles/cc.clvm",
-        "plotter/wallet/puzzles/plotterlisp_deserialisation.clvm",
+        "plotter/wallet/puzzles/chialisp_deserialisation.clvm",
         "plotter/wallet/puzzles/rom_bootstrap_generator.clvm",
         "plotter/wallet/puzzles/generator_for_single_coin.clvm",
         "plotter/wallet/puzzles/genesis-by-coin-id-with-0.clvm",

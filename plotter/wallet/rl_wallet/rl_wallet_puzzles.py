@@ -7,7 +7,7 @@ from plotter.types.blockchain_format.program import Program
 from plotter.types.blockchain_format.sized_bytes import bytes32
 from plotter.types.condition_opcodes import ConditionOpcode
 from plotter.util.ints import uint64
-from plotter.wallet.plotterlisp import sexp
+from plotter.wallet.chialisp import sexp
 from plotter.wallet.puzzles.load_clvm import load_clvm
 
 RATE_LIMITED_MODE = 1
