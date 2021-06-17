@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Dict, List
 
 from blspy import G1Element
-from plotterpos import Verifier
+from chiapos import Verifier
 
 from plotter.plotting.plot_tools import find_duplicate_plot_IDs, get_plot_filenames, load_plots, parse_plot_info
 from plotter.util.config import load_config
